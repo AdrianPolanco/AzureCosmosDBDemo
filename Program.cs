@@ -4,9 +4,16 @@ using AzureCosmosDBDemo.Models;
 using AzureCosmosDBDemo.Models.Options;
 using AzureCosmosDBDemo.Services;
 using Microsoft.Azure.Cosmos;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Packages required:
+//Microsoft.Azure.Cosmos
+//Azure.Extensions.AspNetCore.Configuration.Secrets
+//Azure.Identity
+
+//IMPORTANT: We have to specify a partition key when creating a container in CosmosDB, so we have to add the partition key path to the model and have no problems
+//when creating the CRUD in the container
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
